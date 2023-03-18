@@ -6,20 +6,20 @@ export const Products = [
         name: 'Frutillas',
         stock: 60,
         amount: 1,
-        price: 500,
+        price: 500 ,
     },
     {
         id: uuid(),
         name: 'Bananas',
         stock: 60,
         amount: 1,
-        price: 600,
+        price: 600 ,
     },
     {
         id: uuid(),
         name: 'Manzanas',
         stock: 60,
         amount: 1,
-        price: 1300,
+        price: 1300 ,
     },
-]
+];

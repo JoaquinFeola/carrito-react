@@ -1,12 +1,26 @@
 
 
-export const Product = ({producto}) => {
-  const { id, name, price, amount } = producto;
+export const Product = ({product, productsCart}) => {
+  const { id, name, price, amount } = product;
 
-  const btnclick = () => {
-    console.log(price);
-  }
+  const AddProductToCart = () => {
+    const findProductIndex = productsCart.findIndex( prod => prod.id == product.id );
+    const productInCart = productsCart[findProductIndex];
 
+    if ( findProductIndex === - 1 )
+    {
+      productsCart.push(product);
+      <ProductsCartComp/>
+    }
+    else
+    {
+      productInCart.amount ++;
+      
+
+    }
+    console.log(productsCart);
+  };
+  
   return (
     <>
         {
@@ -16,7 +30,7 @@ export const Product = ({producto}) => {
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                   <p className="price-text">${price}</p>
                   <div className="actions-container">
-                    <button className="btn btn-success" onClick={btnclick}>Agregar</button>
+                    <button className="btn btn-success" onClick={AddProductToCart} >Agregar</button>
                   </div>
               </div>
           </div> 
