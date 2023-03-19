@@ -1,30 +1,24 @@
+import { Products } from "../helpers/Products";
+import { ProductsCartComp } from "./ProductsCartComp";
 
 
-export const Product = ({product, productsCart}) => {
+export const Product = ({product, productsCart, setProductCart}) => {
   const { id, name, price, amount } = product;
-
+  
   const AddProductToCart = () => {
     const findProductIndex = productsCart.findIndex( prod => prod.id == product.id );
     const productInCart = productsCart[findProductIndex];
-
+    
     if ( findProductIndex === - 1 )
     {
-      productsCart.push(product);
-      <ProductsCartComp/>
+      setProductCart([...productsCart, product ]);
     }
-    else
-    {
-      productInCart.amount ++;
-      
-
-    }
-    console.log(productsCart);
   };
   
   return (
     <>
         {
-           <div className="card m-4">
+          <div className="card">
               <div className="card-body text-center">
                   <h2 className="card-title">{name}</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -34,7 +28,9 @@ export const Product = ({product, productsCart}) => {
                   </div>
               </div>
           </div> 
-        }
+        
+        
+      }
     </>
   )
 }

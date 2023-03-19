@@ -1,17 +1,15 @@
 import { Product } from "./Product";
 import { Products } from "../helpers/Products";
-import { useState } from "react";
 
 
-export const ProductsContainer = () => {
+export const ProductsContainer = ({productsCart, setProductCart}) => {
 
-  const [productsCart, setProductCart] = useState([])
 
   return (
-    <div className="products-container d-flex flex-wrap">
+    <div className="products-container d-flex flex-wrap gap-3 justify-content-center m-3">
       {
         Products.map(producto => (
-          <Product key={producto.id} product={producto} productsCart={productsCart} />
+          <Product key={producto.id} product={producto} productsCart={productsCart} setProductCart={setProductCart} />
         ))
       }
     </div>
