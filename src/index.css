@@ -1,60 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* card */
+
 .card {
-    width: 18rem;
-    position: relative;
-    z-index: 1;
+    width: max-content;
+    padding: 10px;
+    margin: 1rem;
 }
 
 
-/* products cart */
+/* cart header styles */
 .header {
-    position: relative;
-    height: 60px;
-}
-
-.cart-btn {
-    background-color: #2c2828;
-    border: none;
-    width: 50px;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color .6s cubic-bezier(0.165, 0.84, 0.44, 1), border .5s;
-}
-.cart-btn:hover {
-    background-color: #1d1c1c;
-}
-.cart-btn:active {
-    border: 1px solid #fff;
-}
-
-.div-products-container {
-    background-color: #000;
+    box-shadow: 0 0 10px #aaa;
     display: flex;
-    height: 400px;
-    z-index: 300;
+    align-items: center;
+}
+.header > h3 {
+    padding: 10px;
+}
+
+
+.header__btns-container {
+    display: flex;
+    justify-content: end;
+}
+
+.header__cart-btn-container {
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    z-index: 44;
-    right: 0;
-    top: 100%;
-    overflow-y: scroll;
+    align-items: center;
+    padding: 0 15px;
 }
-.div-products-container::-webkit-scrollbar {
-    background-color: rgb(212, 212, 212);
-    border-radius: 10px;
-    width: 10px;
+.cart__btn__container-cart-btn {
+    border: 0;
+    color: #2088E2;
+    background-color: transparent;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
 }
-.div-products-container::-webkit-scrollbar-track {
-    background-color: #b9b5b5;
-    border-radius: 10px;
-    width: 5px;
-
-}
-.div-products-container::-webkit-scrollbar-thumb {
-    background-color: #212529d3;
-    border-radius: 10px;
+.cart__btn__container-cart-btn .badge {
+    font-size: 8px;
 }
 
-.card-text {
-    font-size: 20px;
-    font-weight: 400;
+.cart__btn__container-cart-btn:hover {
+    color: #186bb4;
+}
+.cart__btn__container__cart__btn-text {
+    line-height: 1rem;
+}
+
+/* cart btn add and btn icon */
+.actions__bar-add-btn {
+    border: 0;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0069ff;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color .7s;
+}
+.actions__bar-add-btn:hover {
+    background-color: #0055ff;
+}
+
+
+
+.actions__bar-add-btn i {
+    padding: 5px;
+}
+
+
+.image-card {
+    width: 100%;
+    height: 160px;
 }
